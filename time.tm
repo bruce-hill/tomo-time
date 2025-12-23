@@ -152,7 +152,7 @@ struct Time(seconds:Int64, nanoseconds:Int64)
             @(ret.minute) = I(info.tm_min);
             @(ret.second) = I(info.tm_sec);
             @(ret.nanosecond) = I(@(t.nanoseconds));
-            @(ret.weekday) = info.tm_wday + 1;
+            @(ret.weekday).$tag = info.tm_wday + 1;
             @(ret.day_of_year) = I(info.tm_yday);
         `
         ret.timezone = timezone
